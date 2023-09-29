@@ -44,6 +44,8 @@ services:
     volumes:
       - ./db:/app/db
       - ./config:/etc/wireguard
+    restart: always
+
   caddy:
     image: caddy:latest
     container_name: caddy
@@ -54,3 +56,4 @@ services:
       - 443:443
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
+    restart: always
